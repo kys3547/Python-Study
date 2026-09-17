@@ -1,0 +1,83 @@
+"""
+# List: ordered, mutable, allows duplications
+mylst = ["banana", "cherry", "apple"]
+print(mylst)
+
+# Can store different data types in a list
+mylst2 = [5, True, "apple", "apple"]
+print(mylst2)
+
+#Index start from 0
+item = mylst[2]
+print(item)
+
+# iteration
+for i in mylst:
+    print(i)
+
+# serch
+if "banana" in mylst:
+    print("Yes")
+else:
+    print("No")
+
+# functions
+print(len(mylst))
+
+mylst.append("lemon") # append adds an item to the end of the list
+print(mylst)
+
+mylst.insert(1, "blueberry") # insert adds an item at a specific index. note that the index starts from 0
+print(mylst)
+
+item = mylst.pop() # pop removes the last item from the list and returns it
+print(mylst)
+print(item)
+
+mylst.remove("cherry") # remove removes the first occurrence of the specified item from the list
+print(mylst)
+# or you can remove all elements from the list using mylst.clear()
+
+# sorting
+mylst = [1, 4, 5, 3, 2]
+print(mylst)
+mylst.sort() # sort sorts the list in ascending order
+print(mylst)
+
+# if you want to keep your original list, you can use the sorted() function which returns a new sorted list
+newlst = sorted(mylst)
+print(newlst)
+
+# list multiplication
+mylst = [0] * 5 # creates a list with 5 zeros
+print(mylst)
+
+
+# slicing
+mylst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+a = mylst[1:5]
+print(a)
+# if you don't specify the start index, it will start from the beginning of the list
+# if you don't specify the end index, it will go to the end of the list
+# ::2 will return every second element in the list
+# negative indexing allows you to access elements from the end of the list
+
+
+# copy
+list_org = ["banana", "cherry", "apple"]
+list_cpy = list_org
+print(list_cpy)
+list_cpy.append("lemon")
+print(list_org)
+print(list_cpy)
+# if you create a copy of a list using the assignment operator, both lists will point to the same object in memory. Therefore, any changes made to one list will affect the other.
+# using copy() creates a new list object in memory, so changes made to one list will not affect the other.
+# also use [:] to create a shallow copy of a list
+"""
+
+# list comprehension
+mylst = [1, 2, 3, 4, 5]
+b = [i**2 for i in mylst]
+print(mylst)
+print(b)
