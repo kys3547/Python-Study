@@ -1,0 +1,35 @@
+mydict = {"name": "Max", "age": 28, "city": "New York"}
+print(mydict) # prints the entire dictionary
+
+mydict2 = dict(name = "Mary", age = 27, city = "Boston") # another way to create a dictionary
+print(mydict2) # prints the entire dictionary
+
+val = mydict["name"] # get the value of the key "name"
+print(val) # prints Max
+
+mydict["email"] = "max@abc.com" # add a new key-value pair to the dictionary
+print(mydict) # prints the entire dictionary
+
+del mydict["age"] # remove the key-value pair with the key "age"
+print(mydict) # prints the entire dictionary
+
+mydict.pop("name")
+print(mydict)
+
+if "name" in mydict:
+    print(mydict["lastname"])
+else:
+    print("Key 'name' not found in the dictionary")
+
+#or use try except method
+
+#copying a dictionary
+mydict_cpy = mydict # this creates a reference to the original dictionary, not a copy. deep copy
+mydict_cpy = dict(mydict) # this creates a shallow copy of the dictionary
+
+# update
+mydict.update(mydict2)
+print(mydict) # prints the entire dictionary after update
+
+# you cannot serch dictionary by index!!! dictionaries are unordered
+# you can use a tuple as a key but not a list.
