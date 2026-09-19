@@ -23,11 +23,12 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 Constraints:
 -231 <= x <= 231 - 1
  
-Follow up: Could you solve it without converting the integer to a string?"""
+Follow up: Could you solve it without converting the integer to a string?
+"""
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        if x < 0:
+        if x < 0 or (x % 10 == 0 and x != 0):
             return False # all negative numbers are not palindromes
         else:
             return str(x) == str(x)[::-1]
@@ -37,7 +38,7 @@ class Solution:
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        if x< 0 or (x % 10 == 0 and x != 0):
+        if x < 0 or (x % 10 == 0 and x != 0):
             return False
         
         halfRev = 0
@@ -45,6 +46,8 @@ class Solution:
         while halfRev < x:
             halfRev = halfRev * 10 + (x % 10)
             x //= 10
+
+        return halfRev == x or halfRev // 10 == x
 """
 
 solution = Solution()
