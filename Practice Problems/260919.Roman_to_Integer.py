@@ -62,12 +62,10 @@ class Solution:
         total = 0
 
         for i in range(len(s)):
-            if i < len(s) - 1 and romanNums[s[i]] < romanNums[s[i + 1]]:
+            if i + 1 < len(s) and romanNums[s[i]] < romanNums[s[i + 1]]:
                 total -= romanNums[s[i]]
-                i += 1
             else:
                 total += romanNums[s[i]]
-                i += 1
 
         return total
 
